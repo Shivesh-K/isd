@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Complaints</title>
+
+    <style>
+        body {
+            line-height: 1.8rem;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        header {
+            grid-area: header;
+            font-weight: bolder;
+            font-size: 1.8rem;
+            text-align: center;
+        }
+
+        nav {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            grid-area: nav;
+        }
+
+        a {
+            text-decoration: none;
+            padding: 0.4em 1.2em;
+            border-radius: 45px;
+            font-weight: 600;
+            color: black;
+            cursor: pointer;
+        }
+
+        a.active {
+            color: white;
+        }
+
+        table {
+            table-layout: fixed;
+            width: 100%;
+            text-align: center;
+            border-collapse: collapse;
+        }
+
+        table tr {
+            border: 1px solid rgb(224, 224, 224);
+        }
+
+        table th {
+            background-color: rgb(224, 224, 224);
+        }
+
+        table td {
+            vertical-align: top;
+        }
+
+        .condensed {
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            padding: 0.2em;
+            width: fit-content;
+        }
+
+        .grid-container {
+            display: grid;
+            grid-template-areas:
+                'header header header header'
+                'nav nav nav nav'
+                'sidebar content content content'
+                'sidebar content content content'
+                'sidebar content content content'
+                'sidebar content content content';
+            gap: 1.8em;
+        }
+
+        .sidebar {
+            display: flex;
+            flex-direction: column;
+            grid-area: sidebar;
+            padding-right: 1.8em;
+            border: 0.5px;
+        }
+
+        .content {
+            grid-area: content;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 48px;
+        }
+
+        .resolved {
+            opacity: 50%;
+        }
+
+        .active {
+            background-color: lightsalmon;
+        }
+    </style>
+
+</head>
+
+<body class="grid-container">
+
+    <header>Mess Management</header>
+
+    <nav>
+        <span>
+            <a href="./register_complaint.html">New Complain</a>
+            <a href="#" class="active">View Complaints</a>
+        </span>
+    </nav>
+
+    <section class="sidebar">
+        <a href="../coupon/purchase_coupon/coup.html">Coupon Store</a>
+        <a href="../mess_schedule/mess_schedule.html">Mess Schedule</a>
+        <a href="../mess_menu/index.html">Mess Menu</a>
+        <a href="../worders_data/index.html">Worker Data</a>
+        <a href="#" class="active">Complaint</a>
+    </section>
+
+    <section class="content">
+        <table>
+            <colgroup>
+                <col span="1" style="width: 5%;">
+                <col span="1" style="width: 15%;">
+                <col span="1" style="width: 30%;">
+                <col span="1" style="width: 15%;">
+                <col span="1" style="width: 10%;">
+                <col span="1" style="width: 25%;">
+            </colgroup>
+
+            <tbody>
+                <tr>
+                    <th>S. No.</th>
+                    <th>Title</th>
+                    <th>Description</th>
+                    <th>Author</th>
+                    <th>Status</th>
+                    <th>Comments</th>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+    <script type="module" src="./home.js"></script>
+
+</body>
+
+</html>

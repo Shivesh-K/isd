@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body class="grid-container">
+    <link rel="stylesheet" href="style.css">
+
+
+
+    <div class="topnav">
+        <a class="active" href="#">Register Complaint</a>
+        <a href="./view_complaints.html">Complaint status</a>
+
+    </div>
+    <nav>
+        <div style="background-color:  #04aa6d; border: solid; border-color: #04aa6d; color:white">Mess
+            </br></br>Management</div>
+        <span>
+            <button style=" background-color: black; color: white;">Home</button>
+            <button style=" background-color: black; color:white">Log Out</button>
+
+        </span>
+    </nav>
+
+
+    <section class="sidebar">
+        <a class="sidebar-item" href="../coupon/purchase_coupon/coup.html">Coupon Store</a>
+        <a class="sidebar-item" href="../mess_schedule/mess_schedule.html">Mess Schedule</a>
+        <a class="sidebar-item" href="../mess_menu/index.html">Mess Menu</a>
+        <a class="sidebar-item" href="../worders_data/index.html">Worker Data</a>
+        <a class="sidebar-item" href="#">Complaint</a>
+    </section>
+    <section class="content">
+        <div>
+            <h3 style="display: inline;">Subject</h3>
+            <input type="text">
+        </div>
+        <div>
+            <h3>Description</h3>
+            <textarea id="ta" name="message" rows="20" cols="70">The cat was playing in the garden.</textarea>
+        </div>
+
+        <button style=" background-color: black; color: white;">Register</button>
+        <button id="clear" style=" background-color: black; color: white;">clear</button>
+    </section>
+    <script src="./work.js"></script>
+</body>
+
+</html>

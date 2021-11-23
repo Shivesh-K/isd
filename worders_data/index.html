@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Worker Data</title>
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/customcss.css">
+    <style>
+        a {
+            color: black !important;
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav class="navbar">
+        <div class="container-fluid">
+            <a href="index.html"><label class="navbar-brand secondaryColor">Mess Management</label></a>
+            <form class="d-flex">
+                <button class="btn btn-sm  " type="submit">Home</button>
+                <button class="btn btn-sm " type="submit">Log out</button>
+            </form>
+        </div>
+    </nav>
+
+    <hr class="m-auto">
+
+
+    <main class="container-fluid">
+
+        <div class="w-100 mt-2 mainBorder top-menu">
+            <ul class="m-1 top-list">
+                <li id="btnViewInfo">View Info</li>
+                <li id="btnAddInfo">Add Info</li>
+                <li id="btnDeleteIno">Delete Info</li>
+            </ul>
+        </div>
+
+        <section class="row">
+
+            <div class="col-md-2">
+                <div class="mainBorder side-menu">
+                    <ul class="p-3">
+                        <a href="../coupon/purchase_coupon/coup.html">
+                            <li id="btnCouponStore">Coupon Store</li>
+                        </a>
+                        <a href="../mess_schedule/mess_schedule.html">
+                            <li id="btnMessSchedule">Mess Schedule</li>
+                        </a>
+                        <a href="../mess_menu/index.html">
+                            <li id="btnMessMenu">Mess Menu</li>
+                        </a>
+                        <a href="#">
+                            <li id="btnWorkerData">Worker Data</li>
+                        </a>
+                        <a href="../complaint/register_complaint.html">
+                            <li id="btnComplaint">Complaint</li>
+                        </a>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="col-md-10">
+                <div class="w-100 mainBorder secondary-section">
+
+                    <section id="view-info-section" class="w-75 m-auto table-section">
+                        <table class="table table-bordered">
+                            <thead class="">
+                                <tr>
+                                    <td class="bg-info">Name</td>
+                                    <td class="bg-info">Phone Number</td>
+                                    <td class="bg-info">Address</td>
+                                    <td class="bg-info">Employee ID</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Ram</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>X</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>Y</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </section>
+
+                    <section id="delete-info-section" class="w-100">
+                        <form action="">
+                            <div class="w-25 input-section">
+                                <label for="id">Employee ID : </label>
+                                <input id="id" type="text" class="form-control m-lg-1 input-filed" name="id">
+                            </div>
+                            <div class="d-flex flex-row-reverse p-2">
+                                <button type="button" class="btn btn-secondary button">Delete Data</button>
+                            </div>
+                        </form>
+                    </section>
+
+                    <section id="add-info-section" class="w-75 mt-5 m-auto">
+                        <form action="">
+                            <div class="d-flex justify-content-start">
+                                <div class="w-50 m-3 d-flex">
+                                    <label class="px-2" for="name">Name</label>
+                                    <input id="name" type="text" class="form-control input-filed" name="name">
+                                </div>
+                                <div class="w-50 m-3 d-flex">
+                                    <label class="px-2" for="address">Address</label>
+                                    <input id="address" type="text" class="form-control input-filed" name="address">
+                                </div>
+                            </div>
+                            <div class="d-flex justify-content-between">
+                                <div class="w-50 m-3 d-flex">
+                                    <label class="px-2 small" for="phoneNumber">Phone Number</label>
+                                    <input id="phoneNumber" type="text" class="form-control input-filed"
+                                        name="phoneNumber">
+                                </div>
+                            </div>
+                            <div class="d-flex justify-content-sm-end">
+                                <button type="button" class="btn btn-secondary button mx-3">Save</button>
+                            </div>
+
+                        </form>
+                    </section>
+
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+
+    <script src="assets/jquery-3.6.0.min.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+    <script src="assets/js/customjs.js"></script>
+
+    <script>
+        let BtnWorkData = document.getElementById("btnWorkerData");
+        BtnWorkData.style.backgroundColor = "antiquewhite"
+        BtnWorkData.style.border = "1px solid #157DEC"
+    </script>
+
+</body>
+
+</html>

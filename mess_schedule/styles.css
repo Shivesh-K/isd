@@ -1,0 +1,44 @@
+#final{
+  padding-top: 50px ;
+  padding-left: 200px;
+}
+
+body{
+  background-color: #fffacd;
+}
+
+img{
+  padding-top: 30px;
+  width:50%;
+}
+th,td{
+  font-size: 15px;
+}
+
+.sidebar{
+  left: 30px;
+}
+.table{
+  width: 90%;
+}
+.col-3{
+  margin-left: 10px;
+
+}
+.head{
+  padding-top: 20px;
+  background-color: #ef8172;
+}
+
+.menu{
+  text-align: center;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.side{
+  padding-bottom: 10px;
+  font-size: 50px;
+  font-weight: bolder;
+
+}
