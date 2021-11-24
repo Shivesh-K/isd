@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <title>Mess Schedule</title>
 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
@@ -15,54 +15,43 @@
         crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
         integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
-        crossorigin="anonymous"></script>
+        crossorigin="anonymous"></script> -->
 
     <link rel="stylesheet" href="styles.css">
 
 
 </head>
 
-<body>
+<body class="grid-container">
+    <header>Mess Management</header>
 
-    <div class="row head">
-        <div style="margin-left:20px" class="col">
-            <h1>Mess Management</h1>
-        </div>
-        <div class="col-md-auto">
-            <button type="button" name="button">Home</button>
-        </div>
-        <div class="col col-lg-2">
-            <button type="button" name="button">Log Out</button>
-        </div>
-    </div>
+    <nav>
+        <span>
+            <!-- <a href="../purchase_coupon/coup.html">Purchase Coupon</a> -->
+            <a href="#" class="active">Mess Schedule</a>
+        </span>
+    </nav>
 
-    <div class="menu">
-        <h1 style="color:#dc143c;">Mess Schedule and Allotment</h1>
-    </div>
+    <section class="sidebar">
+        <a href="../coupon/purchase_coupon/coup.html">Coupon Store</a>
+        <a href="#" class="active">Mess Schedule</a>
+        <a href="../mess_menu/index.html">Mess Menu</a>
+        <a href="../worders_data/index.html">Worker Data</a>
+        <a href="../complaint/register_complaint.html">Complaint</a>
+    </section>
 
+    <section class="content">
 
-
-    <div style="background-color:#ef8172;" class="row">
-        <div style="left: 30px; margin-top:50px; width:30%; padding-bottom:500px;" class="col-3 btn-group-vertical">
-            <a class="side link-dark" href="../coupon/purchase_coupon/coup.html">Coupon Store</a>
-            <a class="side link-dark" href="#">Mess Schedule</a>
-            <a class="side link-dark" href="../mess_menu/index.html">Mess Menu</a>
-            <a class="side link-dark" href="../worders_data/index.html">Worker Data</a>
-            <a class="side link-dark" href="../complaint/register_complaint.html">Complaint</a>
-
-
-        </div>
-        <div id="final" style="left:20px;" class="col-8">
-
-            <table class="table" style="border: solid; background-color:#fffacd; font-size: large;">
-                <tbody>
-                    <h2> MESS SCHEDULE </h2>
-                    <tr style="height: 53.35px;">
-                        <th style="text-align: center;">MEAL</th>
-                        <th>BREAKFAST</th>
-                        <th>LUNCH</th>
-                        <th>SNACKS</th>
-                        <th>DINNER</th>
+        <!-- <table class="table" style="border: solid; background-color:#fffacd; font-size: large;"> -->
+        <table>
+            <tbody>
+                <h2> MESS SCHEDULE </h2>
+                <t>
+                    <th>MEAL</th>
+                    <th>BREAKFAST</th>
+                    <th>LUNCH</th>
+                    <th>SNACKS</th>
+                    <th>DINNER</th>
                     </tr>
                     <tr>
                         <td>MESS A</td>
@@ -85,49 +74,51 @@
                         <td>5pm - 6pm</td>
                         <td>7pm - 9pm</td>
                     </tr>
-                </tbody>
-            </table>
+            </tbody>
+        </table>
 
-            <table class="table" style="border: solid; background-color:#fffacd; font-size: large;">
-                <tbody>
-                    <h2> MESS ALLOTMENT </h2>
-                    <tr style="height: 53.35px;">
-                        <th style="text-align: center;">MEAL</th>
-                        <th>BATCH 1</th>
-                        <th>BATCH 2</th>
-                        <th>BATCH 3</th>
-                    </tr>
-                    <tr>
-                        <td>MESS A</td>
-                        <td>Y19</td>
-                        <td>Y17</td>
-                        <td>PHD STUDENTS</td>
-                    </tr>
-                    <tr>
-                        <td>MESS B</td>
-                        <td>Y20</td>
-                        <td>Y18</td>
-                        <td>Faculty and Staff</td>
-                    </tr>
-                    <tr>
-                        <td>MESS C</td>
-                        <td>Y18 (living in BH4)</td>
-                        <td> - </td>
-                        <td> - </td>
-                    </tr>
-                </tbody>
-            </table>
+        <div style="height: 1em;"></div>
+        <!-- <table class="table" style="border: solid; background-color:#fffacd; font-size: large;"> -->
+        <table>
+            <tbody>
+                <h2> MESS ALLOTMENT </h2>
+                <tr>
+                    <th>MEAL</th>
+                    <th>BATCH 1</th>
+                    <th>BATCH 2</th>
+                    <th>BATCH 3</th>
+                </tr>
+                <tr>
+                    <td>MESS A</td>
+                    <td>Y19</td>
+                    <td>Y17</td>
+                    <td>PHD STUDENTS</td>
+                </tr>
+                <tr>
+                    <td>MESS B</td>
+                    <td>Y20</td>
+                    <td>Y18</td>
+                    <td>Faculty and Staff</td>
+                </tr>
+                <tr>
+                    <td>MESS C</td>
+                    <td>Y18 (living in BH4)</td>
+                    <td> - </td>
+                    <td> - </td>
+                </tr>
+            </tbody>
+        </table>
 
 
 
 
-        </div>
-    </div>
+    </section>
+    <!-- </div>
 
     <div>
         <img src="logo.png" alt="LNMIIT Logo">
 
-    </div>
+    </div> -->
 </body>
 
 </html>

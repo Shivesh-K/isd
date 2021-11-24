@@ -26,14 +26,13 @@
   color: white;
 }
 nav {
-  height: 70px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   grid-area: header;
 }
 .grid-container {
-  gap: 10px;
+  gap: 1.8em;
   display: grid;
   grid-template-areas:
     "header header header header header header"
@@ -43,24 +42,24 @@ nav {
     "sidebar content content content content content"
     "sidebar content content content content content";
 }
-.sidebar {
+/* .sidebar {
   border: solid;
 
   border-color: black;
   display: flex;
   flex-direction: column;
   grid-area: sidebar;
-}
-.sidebar-item {
+} */
+/* .sidebar-item {
   padding: 20px 50px;
-}
+} */
 
-.content {
+/* .content {
   grid-area: content;
   display: flex;
   flex-direction: column;
   align-items: center;
-}
+} */
 body {
   line-height: 1.8rem;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
@@ -77,6 +76,7 @@ nav {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
+  align-items: center;
   grid-area: nav;
 }
 
@@ -112,6 +112,16 @@ table td {
   vertical-align: top;
 }
 
+button {
+  background-color: lightsalmon;
+  padding: 0.4em 1.2em;
+  margin: 0.4em;
+  font: inherit;
+  color: white;
+  border: 1px lightsalmon;
+  border-radius: 8px;
+}
+
 .condensed {
   overflow: hidden;
   text-overflow: ellipsis;
@@ -120,7 +130,7 @@ table td {
   width: fit-content;
 }
 
-.grid-container {
+/* .grid-container {
   display: grid;
   grid-template-areas:
     "header header header header"
@@ -130,7 +140,7 @@ table td {
     "sidebar content content content"
     "sidebar content content content";
   gap: 1.8em;
-}
+} */
 
 .sidebar {
   display: flex;
@@ -138,6 +148,7 @@ table td {
   grid-area: sidebar;
   padding-right: 1.8em;
   border: 0.5px;
+  width: fit-content;
 }
 
 .content {

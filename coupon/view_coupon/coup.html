@@ -7,49 +7,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <script defer src="client.js"></script>
-    <title>Document</title>
+    <title>View Coupons</title>
 </head>
 
-<body>
-    <nav class="head">
-        <div class="mess">
-            Mess
-            Management
-        </div>
-        <div class="le">
-            <a href="">logout |</a>
-            <a href="">home</a>
-        </div>
+<body class="grid-container">
+    <header>Mess Management</header>
+
+    <nav>
+        <span>
+            <a href="../purchase_coupon/coup.html">Purchase Coupon</a>
+            <a href="#" class="active">View Coupons</a>
+        </span>
     </nav>
-    <hr>
-    <div class="he2">
-        <ul>
-            <a href="../purchase_coupon/coup.html" class="lediv1">Buy Coupon <bold>|</bold></a>
-            <a href="#" class="lediv1">Access Coupon</a>
-        </ul>
-    </div>
-    <hr>
-    <div>
-        <div class="lediv">
-            <div class="ledi1">
-                <a href="../../mess_schedule/mess_schedule.html" class="lediv1">Mess Schedule</a>
-            </div>
-            <br>
-            <div class="ledi1">
-                <a href="../../mess_menu/index.html" class="lediv1">Mess Menu</a>
-            </div>
-            <br>
-            <div class="ledi1">
-                <a href="../../worders_data/index.html" class="lediv1">Worker Data</a>
-            </div>
-            <br>
-            <div class="ledi1">
-                <a href="../../complaint/register_complaint.html" class="lediv1">Complaint</a>
-            </div>
-            <br>
-        </div>
+
+    <section class="sidebar">
+        <a href="#" class="active">Coupon Store</a>
+        <a href="../../mess_schedule/mess_schedule.html">Mess Schedule</a>
+        <a href="../../mess_menu/index.html">Mess Menu</a>
+        <a href="../../worders_data/index.html">Worker Data</a>
+        <a href="../../complaint/register_complaint.html">Complaint</a>
+    </section>
+
+    <section class="content">
         <aside>
-            <table border=10 class="ridiv">
+            <table class="ridiv">
                 <tr>
                     <th>Date</th>
                     <th>Meal Type</th>
@@ -64,7 +45,7 @@
                 </tr>
             </table>
         </aside>
-    </div>
+    </section>
 
 </body>
 
