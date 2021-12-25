@@ -7,7 +7,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Register Complaint</title>
 
-    <script src=" ./work.js" type="module" defer></script>
 </head>
 
 <body class="grid-container">
@@ -35,20 +34,26 @@
     <section class="content">
         <form>
             <div>
-                <h3 style="display: inline;">Subject</h3>
-                <input type="text" name="subject">
+                <label style="display: inline;" for="subject">Subject</label>
+                <br>
+                <input type="text" name="subject" id="subject">
             </div>
+            <br>
             <div>
-                <h3>Description</h3>
-                <textarea id="ta" name="description" rows="20" cols="70">Explain your complain</textarea>
+                <label for="ta">Description</label>
+                <br>
+                <textarea id="ta" name="description" rows="20" cols="70"
+                    placeholder="Explain your complain in detail"></textarea>
             </div>
 
-            <span>
+            <span style="display: flex; justify-content: center;">
                 <button id="clear" style="background-color: white; color: lightsalmon;">Clear</button>
                 <button type="submit">Register</button>
             </span>
         </form>
     </section>
+
+    <script src=" ./work.js" type="module"></script>
 </body>
 
 </html>

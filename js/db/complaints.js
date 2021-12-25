@@ -1,6 +1,6 @@
-import { addDoc, collection, doc } from "firebase/firestore";
+import { addDoc, collection, doc } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore.js";
 
-import { firestore as db } from "../firebase";
+import { firestore as db } from "../firebase.js";
 
 const registerComplaint = async ({ subject, description }) => {
     const collectionRef = collection(db, 'complaints');

@@ -1,7 +1,7 @@
 import { registerComplaint } from "../js/db/complaints.js";
 
 var ele = document.getElementById("ta");
-handleClear = () => {
+const handleClear = () => {
     ele.value = "";
 
 }
