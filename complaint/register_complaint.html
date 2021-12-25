@@ -6,6 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Register Complaint</title>
+
+    <script src=" ./work.js" type="module" defer></script>
 </head>
 
 <body class="grid-container">
@@ -31,21 +33,22 @@
 
 
     <section class="content">
-        <div>
-            <h3 style="display: inline;">Subject</h3>
-            <input type="text">
-        </div>
-        <div>
-            <h3>Description</h3>
-            <textarea id="ta" name="message" rows="20" cols="70">The cat was playing in the garden.</textarea>
-        </div>
+        <form>
+            <div>
+                <h3 style="display: inline;">Subject</h3>
+                <input type="text" name="subject">
+            </div>
+            <div>
+                <h3>Description</h3>
+                <textarea id="ta" name="description" rows="20" cols="70">Explain your complain</textarea>
+            </div>
 
-        <span">
-            <button id="clear" style="background-color: white; color: lightsalmon;">Clear</button>
-            <button>Register</button>
+            <span>
+                <button id="clear" style="background-color: white; color: lightsalmon;">Clear</button>
+                <button type="submit">Register</button>
             </span>
+        </form>
     </section>
-    <script src=" ./work.js"></script>
 </body>
 
 </html>
