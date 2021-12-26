@@ -1,20 +1,20 @@
-import { getAllComplaints, getComplaints, updateComplaint } from "../data.js";
+import { getAllComplaints, getComplaints, updateComplaint } from "../../js/db/complaints.js";
 
 let isAdmin = localStorage.getItem("admin") ? true : false;
 let name = localStorage.getItem("name") ?? "";
-let complaints = isAdmin ? getAllComplaints() : getComplaints(name);
+let complaints = await (isAdmin ? getAllComplaints() : getComplaints());
 
 const table = document.querySelector("tbody");
 
 complaints.forEach(complaint => {
     const newRow = document.createElement("tr");
 
-    for (const key in complaint) {
+    ['subject', 'description', 'author', 'status', 'comments'].forEach(key => {
         const newData = document.createElement("td");
-        newData.innerText = complaint[key];
+        newData.innerText = complaint[key] ?? '--';
         newData.classList.add("condensed");
         newRow.appendChild(newData);
-    }
+    });
 
     if (isAdmin) {
         const commentElement = newRow.lastElementChild;

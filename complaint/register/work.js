@@ -12,10 +12,20 @@ const clr = document.getElementById("clear");
 clr.addEventListener("click", handleClear);
 
 const form = document.querySelector("form");
-form.addEventListener('submit', (event) => {
+form.addEventListener('submit', async (event) => {
     event.preventDefault();
 
     const formData = new FormData(event.target);
     const data = Object.fromEntries(formData.entries());
-    registerComplaint(data)
+
+    for (let [_, value] of Object.entries(data)) {
+        if (value.trim().length == 0) {
+            alert("Please enter valid values");
+            return;
+        }
+    }
+
+    const response = await registerComplaint(data);
+
+    alert(`${response.status}: ${response.message}`);
 });

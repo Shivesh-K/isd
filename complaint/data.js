@@ -1,45 +1,42 @@
-const complaints = [
-    {
-        id: 1,
-        title: "Bad Food",
-        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras maximus maximus tincidunt. Quisque malesuada scelerisque dolor a porta. Etiam mi nisl, placerat sed pulvinar at, egestas quis nunc. Aenean et lectus ullamcorper, posuere nulla a, consequat eros. Nulla vel justo convallis, lobortis ante quis, ornare ipsum. Maecenas pulvinar dui nisi, vitae mollis nulla sagittis porta. Ut congue eget est molestie rhoncus. In hac habitasse platea dictumst. Sed tincidunt vulputate orci, eu congue augue aliquam ac. Proin in dui tincidunt nibh pulvinar tempus. Nam est erat, rutrum ut risus non, finibus fermentum magna. Duis nec leo congue erat malesuada dignissim. Phasellus tempus scelerisque tortor, vel malesuada lectus sodales non. Suspendisse ut volutpat dolor, finibus porttitor elit. Etiam a ornare eros. ",
-        author: "Shivesh Kaundinya",
-        status: "Pending",
-        comments: "--"
-    }, {
-        id: 2,
-        title: "Bad Food",
-        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras maximus maximus tincidunt. Quisque malesuada scelerisque dolor a porta. Etiam mi nisl, placerat sed pulvinar at, egestas quis nunc. Aenean et lectus ullamcorper, posuere nulla a, consequat eros. Nulla vel justo convallis, lobortis ante quis, ornare ipsum. Maecenas pulvinar dui nisi, vitae mollis nulla sagittis porta. Ut congue eget est molestie rhoncus. In hac habitasse platea dictumst. Sed tincidunt vulputate orci, eu congue augue aliquam ac. Proin in dui tincidunt nibh pulvinar tempus. Nam est erat, rutrum ut risus non, finibus fermentum magna. Duis nec leo congue erat malesuada dignissim. Phasellus tempus scelerisque tortor, vel malesuada lectus sodales non. Suspendisse ut volutpat dolor, finibus porttitor elit. Etiam a ornare eros. ",
-        author: "Shivesh Kaundinya",
-        status: "Pending",
-        comments: "--"
-    }, {
-        id: 3,
-        title: "Bad Food",
-        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras maximus maximus tincidunt. Quisque malesuada scelerisque dolor a porta. Etiam mi nisl, placerat sed pulvinar at, egestas quis nunc. Aenean et lectus ullamcorper, posuere nulla a, consequat eros. Nulla vel justo convallis, lobortis ante quis, ornare ipsum. Maecenas pulvinar dui nisi, vitae mollis nulla sagittis porta. Ut congue eget est molestie rhoncus. In hac habitasse platea dictumst. Sed tincidunt vulputate orci, eu congue augue aliquam ac. Proin in dui tincidunt nibh pulvinar tempus. Nam est erat, rutrum ut risus non, finibus fermentum magna. Duis nec leo congue erat malesuada dignissim. Phasellus tempus scelerisque tortor, vel malesuada lectus sodales non. Suspendisse ut volutpat dolor, finibus porttitor elit. Etiam a ornare eros. ",
-        author: "Shivesh Kaundinya",
-        status: "Pending",
-        comments: "--"
-    }, {
-        id: 4,
-        title: "Bad Food",
-        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras maximus maximus tincidunt. Quisque malesuada scelerisque dolor a porta. Etiam mi nisl, placerat sed pulvinar at, egestas quis nunc. Aenean et lectus ullamcorper, posuere nulla a, consequat eros. Nulla vel justo convallis, lobortis ante quis, ornare ipsum. Maecenas pulvinar dui nisi, vitae mollis nulla sagittis porta. Ut congue eget est molestie rhoncus. In hac habitasse platea dictumst. Sed tincidunt vulputate orci, eu congue augue aliquam ac. Proin in dui tincidunt nibh pulvinar tempus. Nam est erat, rutrum ut risus non, finibus fermentum magna. Duis nec leo congue erat malesuada dignissim. Phasellus tempus scelerisque tortor, vel malesuada lectus sodales non. Suspendisse ut volutpat dolor, finibus porttitor elit. Etiam a ornare eros. ",
-        author: "Shivesh Kaundinya",
-        status: "Pending",
-        comments: "--"
-    }, {
-        id: 5,
-        title: "Bad Food",
-        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras maximus maximus tincidunt. Quisque malesuada scelerisque dolor a porta. Etiam mi nisl, placerat sed pulvinar at, egestas quis nunc. Aenean et lectus ullamcorper, posuere nulla a, consequat eros. Nulla vel justo convallis, lobortis ante quis, ornare ipsum. Maecenas pulvinar dui nisi, vitae mollis nulla sagittis porta. Ut congue eget est molestie rhoncus. In hac habitasse platea dictumst. Sed tincidunt vulputate orci, eu congue augue aliquam ac. Proin in dui tincidunt nibh pulvinar tempus. Nam est erat, rutrum ut risus non, finibus fermentum magna. Duis nec leo congue erat malesuada dignissim. Phasellus tempus scelerisque tortor, vel malesuada lectus sodales non. Suspendisse ut volutpat dolor, finibus porttitor elit. Etiam a ornare eros. ",
-        author: "Shivesh Kaundinya",
-        status: "Pending",
-        comments: "--"
-    },
-];
+import { doc, collection, query, getDocs, getDoc, setDoc, where } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore.js";
 
-const getAllComplaints = () => complaints;
-const getComplaints = (author) => complaints.filter(complaint => complaint.author === author);
-const updateComplaint = (id, data) => complaints[id] = data;
+import { firestore as db } from "../js/firebase.js";
+
+const getAllComplaints = async () => {
+    const collectionRef = collection(db, 'complaints');
+    const querySnapshot = await getDocs(collectionRef);
+
+    const complaints = [];
+    querySnapshot.docs.forEach(docSnap => complaints.push(docSnap.data()));
+
+    for (let complaint of complaints) {
+        try {
+            const docSnap = await getDoc(doc(db, 'users', complaint['author']));
+            console.log(docSnap.data());
+            complaint['author'] = docSnap.data()['name'];
+        } catch (error) {
+            console.log(complaint);
+        }
+    }
+
+    return complaints;
+};
+
+const getComplaints = async (authorId) => {
+    const collectionRef = collection(db, 'complaints');
+    const q = query(collectionRef, where('author', '==', window.localStorage.getItem('uid')));
+    const querySnapshot = await getDocs(q);
+
+    const complaints = [];
+    querySnapshot.docs.forEach(docSnap => complaints.push({ ...docSnap.data(), author: window.localStorage.name }));
+
+    return complaints;
+};
+
+const updateComplaint = async (id, data) => {
+    const docRef = doc(db, 'complaints', id);
+    await setDoc(docRef, data);
+};
 const addComplaint = (data) => complaints.push({ id: complaints.size + 1, ...data });
 const setComplaintStatus = (id, status) => complaints[id].status = status;
 
