@@ -1,4 +1,4 @@
-import { getAllComplaints, getComplaints, updateComplaint } from "./data.js";
+import { getAllComplaints, getComplaints, updateComplaint } from "../data.js";
 
 let isAdmin = localStorage.getItem("admin") ? true : false;
 let name = localStorage.getItem("name") ?? "";

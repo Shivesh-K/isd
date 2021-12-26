@@ -1,4 +1,7 @@
-import { registerComplaint } from "../js/db/complaints.js";
+import { registerComplaint } from "../../js/db/complaints.js";
+import { ensureLoggedIn } from "../../js/auth/login.js";
+
+ensureLoggedIn();
 
 var ele = document.getElementById("ta");
 const handleClear = () => {
