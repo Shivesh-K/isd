@@ -11,7 +11,7 @@ const registerComplaint = async ({ subject, description }) => {
         await setDoc(docRef, {
             subject,
             description,
-            author: window.localStorage.getItem('uid'),
+            author: window.sessionStorage.getItem('uid'),
             status: 'Pending',
             id: docRef.id
         });
@@ -51,11 +51,11 @@ const getAllComplaints = async () => {
 
 const getComplaints = async () => {
     const collectionRef = collection(db, 'complaints');
-    const q = query(collectionRef, where('author', '==', window.localStorage.getItem('uid')));
+    const q = query(collectionRef, where('author', '==', window.sessionStorage.getItem('uid')));
     const querySnapshot = await getDocs(q);
 
     const complaints = [];
-    querySnapshot.docs.forEach(docSnap => complaints.push({ ...docSnap.data(), author: window.localStorage.name }));
+    querySnapshot.docs.forEach(docSnap => complaints.push({ ...docSnap.data(), author: window.sessionStorage.name }));
 
     return complaints;
 };

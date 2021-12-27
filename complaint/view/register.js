@@ -1,7 +1,10 @@
 import { getAllComplaints, getComplaints, updateComplaint } from "../../js/db/complaints.js";
+import { ensureLoggedIn } from '../../js/auth/login.js';
 
-let isAdmin = localStorage.getItem("admin") ? true : false;
-let name = localStorage.getItem("name") ?? "";
+ensureLoggedIn();
+
+let isAdmin = sessionStorage.getItem("admin") ? true : false;
+let name = sessionStorage.getItem("name") ?? "";
 let complaints = await (isAdmin ? getAllComplaints() : getComplaints());
 
 const table = document.querySelector("tbody");
