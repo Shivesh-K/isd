@@ -1,5 +1,5 @@
 import { firestore as db } from '../../js/firebase.js';
-import { collection, getDocs, deleteDoc, doc } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore.js";
+import { collection, getDocs, addDoc, deleteDoc, doc } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore.js";
 
 const getAllWorkers = async () => {
     try {
@@ -16,6 +16,15 @@ const getAllWorkers = async () => {
     }
 }
 
+const addWorker = async (workerData) => {
+    try {
+        const collectionRef = collection(db, 'workers');
+        await addDoc(collectionRef, workerData);
+    } catch (error) {
+        return { error: "The worker could not be added" };
+    }
+}
+
 const removeWorker = async (workerId) => {
     try {
         const docRef = doc(db, 'workers', workerId);
@@ -27,4 +36,4 @@ const removeWorker = async (workerId) => {
     }
 }
 
-export { getAllWorkers, removeWorker };
+export { getAllWorkers, removeWorker, addWorker };

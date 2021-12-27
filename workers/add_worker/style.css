@@ -50,6 +50,16 @@ table td {
     vertical-align: top;
 }
 
+button {
+  background-color: lightsalmon;
+  padding: 0.4em 1.2em;
+  margin: 0.4em;
+  font: inherit;
+  color: white;
+  border: 1px lightsalmon;
+  border-radius: 8px;
+}
+
 .condensed {
     overflow: hidden;
     text-overflow: ellipsis;

@@ -30,28 +30,31 @@
     </section>
 
     <section class="content">
-        <table>
-            <colgroup>
-                <!-- <col span="1" style="width: 5%;"> -->
-                <col span="1" style="width: 15%;">
-                <col span="1" style="width: 30%;">
-                <col span="1" style="width: 15%;">
-            </colgroup>
+        <form>
+            <div>
+                <label for="name">Name</label>
+                <input type="text" name="name" id="name">
+            </div>
 
-            <tbody>
-                <tr>
-                    <!-- <th>S. No.</th> -->
-                    <th>Title</th>
-                    <th>Description</th>
-                    <th>Author</th>
-                    <th>Status</th>
-                    <th>Comments</th>
-                </tr>
-            </tbody>
-        </table>
+            <div>
+                <label for="occupation">Occupation</label>
+                <select name="occupation" id="occupation">
+                    <option value="cook">Cook</option>
+                    <option value="servant">Servant</option>
+                    <option value="manager">Manager</option>
+                </select>
+            </div>
+
+            <div>
+                <label for="salary">Salary</label>
+                <input type="number" name="salary" id="salary">
+            </div>
+
+            <button type="submit">Add Worker</button>
+        </form>
     </section>
 
-    <script type="module" src="./register.js"></script>
+    <script type="module" src="./add_worker_controller.js"></script>
 
 </body>
 

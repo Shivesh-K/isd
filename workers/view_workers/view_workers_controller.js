@@ -1,5 +1,7 @@
 import { getAllWorkers, removeWorker } from "../../js/db/workers.js";
+import { ensureLoggedIn } from "../../js/auth/login.js";
 
+ensureLoggedIn();
 let isAdmin = sessionStorage.getItem("admin") ? true : false;
 const table = document.querySelector("tbody");
 

@@ -18,8 +18,8 @@ const login = async ({ email, password }) => {
 }
 
 const ensureLoggedIn = () => {
-    if (!window.sessionStorage.uid) {
-        window.location.replace("/auth/login");
+    if (!window.sessionStorage.getItem('uid')) {
+        location.replace("/auth/login");
         return;
     }
 }
