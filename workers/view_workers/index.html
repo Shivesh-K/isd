@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Complaints</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="grid-container">
+
+    <header>Mess Management</header>
+
+    <nav>
+        <span>
+            <a href="#" class="active">View Workers</a>
+            <a href="../add_worker">Add Worker</a>
+        </span>
+    </nav>
+
+    <section class="sidebar">
+        <a href="../../coupon/purchase_coupon/coup.html">Coupon Store</a>
+        <a href="../../mess_schedule/mess_schedule.html">Mess Schedule</a>
+        <a href="../../mess_menu/index.html">Mess Menu</a>
+        <a href="#" class="active">Worker Data</a>
+        <a href="../../complaint/register">Complaint</a>
+    </section>
+
+    <section class="content">
+        <table>
+            <colgroup>
+                <!-- <col span="1" style="width: 5%;"> -->
+                <col span="1" style="width: 15%;">
+                <col span="1" style="width: 30%;">
+                <col span="1" style="width: 15%;">
+            </colgroup>
+
+            <tbody>
+                <tr>
+                    <!-- <th>S. No.</th> -->
+                    <th>Name</th>
+                    <th>Occupation</th>
+                    <th>Salary</th>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+    <script type="module" src="./view_workers_controller.js"></script>
+
+</body>
+
+</html>
